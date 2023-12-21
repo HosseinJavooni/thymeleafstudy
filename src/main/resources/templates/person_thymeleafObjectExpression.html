@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Expression</title>
+</head>
+<body>
+<p style="color:red; font-size: xxx-large; font-weight: bold">We use <span
+        style="color: olivedrab">Object Expression</span> for thymeleaf here:</p>
+<div th:object="${person}">
+    <p>person id is : <span th:text="*{getId()}"></span></p>
+    <p>person first name is : <span th:text="*{getFirstName()}"></span></p>
+    <p>person last name is : <span th:text="*{getLastName()}"></span></p>
+    <p>person address is : <span th:text="'st: ' + *{getAddress().getStreet()} + 'zipCode: ' + *{getAddress().getZipCode()}"></span></p>
+</div>
+</body>
+</html>

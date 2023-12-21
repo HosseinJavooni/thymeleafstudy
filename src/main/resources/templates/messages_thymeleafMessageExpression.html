@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Message Expression</title>
+</head>
+<body>
+<p style="color:red; font-size: xxx-large; font-weight: bold">We use <span
+        style="color: olivedrab">Message Expression</span> for thymeleaf here:</p>
+<p style="color:darkblue; font-size: xxx-large; font-weight: bold">
+    In this section we use Thymeleaf message expressions. messages comes from "message.properties" file in project.
+</p>
+<br>
+<p th:text="#{mymessage.here}" style="font-weight: bold; font-size: x-large"></p>
+<p style="font-weight: bold; font-size: x-large; color: red">
+    By default messages read from "messages.properties" file. but now has read from "MyMessage.properties" !! because I add this line to "application.properties" <br>
+    spring.messages.basename=MyMessages. <span style="color: green">so you see message like "??thymeleaf.message_en_IN??" below because spring can't find the messages!</span>
+</p>
+<p th:text="#{thymeleaf.message}" style="font-weight: bold; font-size: x-large"></p>
+<p th:text="#{hossein.message}" style="font-weight: bold; font-size: x-large"></p>
+
+</body>
+</html>

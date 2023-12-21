@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fa">
+    <header>
+        <meta charset="UTF-8">
+        <title>Thymeleaf</title>
+    </header>
+    <style>
+        table, th, td {
+            border:1px solid black;
+        }
+    </style>
+    <body>
+    <p style="color:red; font-size: xxx-large; font-weight: bold">We use <span style="color: olivedrab">Variable Expression</span> for thymeleaf here:</p>
+    <h1>
+        <table style="width:60%">
+                <tr>
+                    <td>id</td>
+                    <td>FirstName</td>
+                    <td>LastName</td>
+                    <td>Address</td>
+                </tr>
+                <tr>
+                    <td th:text="${person.getId()}">id is here!</td>
+                    <td th:text="${person.getFirstName()}">first name is here!</td>
+                    <td th:text="${person.getLastName()}">last name is here!</td>
+                    <td th:text="${'st: ' + person.getAddress().getStreet()} + ' zip code: ' + ${person.getAddress().getZipCode()}">Address is here!</td>
+                </tr>
+        </table>
+    </h1>
+    </body>
+</html>
