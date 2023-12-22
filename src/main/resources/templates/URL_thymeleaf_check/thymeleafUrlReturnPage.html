@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>/person</title>
+</head>
+<body>
+<p style="color: red; font-weight: bolder; font-size: 50px">URL is <span th:text="${url}"></span></p>
+<ul>
+    <li>person id is: <span th:text="${person.getId()}"></span></li>
+    <li>person firstName is: <span th:text="${person.getFirstName()}"></span></li>
+    <li>person lastName is: <span th:text="${person.getLastName()}"></span></li>
+    <li>person address is: <span th:text="${person.getAddress().toString()}"></span></li>
+</ul>
+</body>
+</html>

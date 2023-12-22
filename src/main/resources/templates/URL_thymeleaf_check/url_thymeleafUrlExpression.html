@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a {
+            font-weight: bolder;
+            font-size: 40px;
+            color: darkblue
+        }
+    </style>
+</head>
+<body th:object="${person}">
+    <a th:href="@{/thymeleafUrl/person}">URL: /thymeleafUrl/person</a><br>
+    <a th:href="@{/thymeleafUrl/person/{id}/{firstName}/{lastName}/{street}(id=*{getId()},firstName=*{getFirstName()},lastName=*{getLastName()},street=*{getAddress().getStreet()})}">URL: /thymeleafUrl/person/{id}/{firstName}/{lastName}/{street}</a><br>
+    <a th:href="@{/thymeleafUrl/person(id=*{getId()},firstName=*{getFirstName()},lastName=*{getLastName()},street=*{getAddress().getStreet()})}">URL: /thymeleafUrl/person?id=**&firstName=**&lastName=**&street=**</a>
+</body>
+</html>

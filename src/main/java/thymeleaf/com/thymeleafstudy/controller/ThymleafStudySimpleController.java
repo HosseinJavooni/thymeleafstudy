@@ -34,4 +34,8 @@ public class ThymleafStudySimpleController{
     public String returnMessages(){
         return "messages_thymeleafMessageExpression";
     }
+    @GetMapping("/url-thymeleaf-url-expression")
+    public String returnUrl(){
+        return "URL_thymeleaf_check/url_thymeleafUrlExpression";
+    }
 }

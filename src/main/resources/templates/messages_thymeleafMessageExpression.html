@@ -13,8 +13,10 @@
 <br>
 <p th:text="#{mymessage.here}" style="font-weight: bold; font-size: x-large"></p>
 <p style="font-weight: bold; font-size: x-large; color: red">
-    By default messages read from "messages.properties" file. but now has read from "MyMessage.properties" !! because I add this line to "application.properties" <br>
-    spring.messages.basename=MyMessages. <span style="color: green">so you see message like "??thymeleaf.message_en_IN??" below because spring can't find the messages!</span>
+    By default messages read from "messages.properties" file. but now has read from "MyMessage.properties" !! because I
+    add this line to "application.properties" <br>
+    spring.messages.basename=MyMessages. <span style="color: green">so you see message like "??thymeleaf.message_en_IN??"
+    below because spring can't find the messages!</span>
 </p>
 <p th:text="#{thymeleaf.message}" style="font-weight: bold; font-size: x-large"></p>
 <p th:text="#{hossein.message}" style="font-weight: bold; font-size: x-large"></p>
