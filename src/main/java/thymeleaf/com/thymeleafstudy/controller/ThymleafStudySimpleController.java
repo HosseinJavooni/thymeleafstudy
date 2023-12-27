@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import org.springframework.web.bind.annotation.RequestParam;
 import thymeleaf.com.thymeleafstudy.model.Address;
 import thymeleaf.com.thymeleafstudy.model.Person;
 
@@ -37,5 +38,17 @@ public class ThymleafStudySimpleController{
     @GetMapping("/url-thymeleaf-url-expression")
     public String returnUrl(){
         return "URL_thymeleaf_check/url_thymeleafUrlExpression";
+    }
+
+    @GetMapping("/person-thymeleaf-conditional-expression")
+    public String returnPersonForConditional(Model model, @RequestParam int id,
+                                             @RequestParam String firstName,
+                                             @RequestParam String lastName,
+                                             @RequestParam String street,
+                                             @RequestParam String zipCode){
+        var address = new Address(street, zipCode);
+        var person = new Person(id, firstName, lastName, address);
+        model.addAttribute("person", person);
+        return "person_thymeleafConditionalExpression";
     }
 }

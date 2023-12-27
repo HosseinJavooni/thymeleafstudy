@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Conditional Expression</title>
+</head>
+<body>
+<div th:object="${person}">
+    <p>firstName:</p>
+    <p th:text="*{getFirstName().length()<10} ? *{getFirstName()} : '!! firstName is More Than 10 Characters !!'"></p>
+    <p>lastName:</p>
+    <p th:text="*{getLastName().equals('Hossein')} ? *{getLastName()} : '!! Your name is not Hossein !!'"></p>
+    <p>zip code in address:</p>
+    <p th:text="*{getAddress().getZipCode().contains('3')} ? *{getAddress().getZipCode()} : 'Your zipCode don\'t contains \'3\' !'"></p>
+    <p>street in address:</p>
+    <p th:text="*{getAddress().getStreet().equals('')} ? 'please send your street!!' : *{getAddress().getStreet()}"></p>
+</div>
+</body>
+</html>
