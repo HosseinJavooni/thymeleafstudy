@@ -4,9 +4,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import thymeleaf.com.thymeleafstudy.model.Address;
 import thymeleaf.com.thymeleafstudy.model.Person;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class ThymleafStudySimpleController{
@@ -50,5 +54,16 @@ public class ThymleafStudySimpleController{
         var person = new Person(id, firstName, lastName, address);
         model.addAttribute("person", person);
         return "person_thymeleafConditionalExpression";
+    }
+    @GetMapping("/person-thymeleaf-iteration-expression/{count}")
+    public String returnPeople(@PathVariable String count, Model model){
+        List<Person> personList = new ArrayList<>();
+        Person person;
+        for(int i=0; i<=Integer.parseInt(count); i++){
+            person = new Person(i, "firstName-"+i, "lastName-"+i, null);
+            personList.add(person);
+        }
+        model.addAttribute("personList", personList);
+        return "person_thymeleafIterationExpression";
     }
 }

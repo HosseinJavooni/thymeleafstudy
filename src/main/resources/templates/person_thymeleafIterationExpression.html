@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iteration Expression</title>
+    <style>
+        table, th, td {
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+<h1 th:text="'/person-thymeleaf-iteration-expression/' + (${personList.size()} - 1)"></h1>
+<h3>Iteration Expression on people list:</h3>
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>firstName</th>
+        <th>lastName</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="person : ${personList}">
+        <td th:text="${person.getId()}"></td>
+        <td th:text="${person.getFirstName()}"></td>
+        <td th:text="${person.getLastName()}"></td>
+    </tr>
+    </tbody>
+</table>
+<br>
+</body>
+</html>
